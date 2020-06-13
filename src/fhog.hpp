@@ -39,9 +39,7 @@
 //
 //M*/
 
-
 //Modified from latentsvm module's "_lsvmc_latentsvm.h".
-
 
 /*****************************************************************************/
 /*                      Latent SVM prediction API                            */
@@ -58,28 +56,26 @@
 //#include "opencv2/imgproc.hpp"
 #include "opencv2/imgproc/imgproc_c.h"
 
-
 //modified from "_lsvmc_types.h"
 
 // DataType: STRUCT featureMap
 // FEATURE MAP DESCRIPTION
-//   Rectangular map (sizeX x sizeY), 
+//   Rectangular map (sizeX x sizeY),
 //   every cell stores feature vector (dimension = numFeatures)
 // map             - matrix of feature vectors
-//                   to set and get feature vectors (i,j) 
+//                   to set and get feature vectors (i,j)
 //                   used formula map[(j * sizeX + i) * p + k], where
 //                   k - component of feature vector in cell (i, j)
-typedef struct{
+typedef struct {
     int sizeX;
     int sizeY;
     int numFeatures;
     float *map;
 } CvLSVMFeatureMapCaskade;
 
-
 #include "float.h"
 
-#define PI    CV_PI
+#define PI CV_PI
 
 #define EPS 0.000001
 
@@ -97,8 +93,7 @@ typedef struct{
 // Block size. Used in feature pyramid building procedure
 #define SIDE_LENGTH 8
 
-#define VAL_OF_TRUNCATE 0.2f 
-
+#define VAL_OF_TRUNCATE 0.2f
 
 //modified from "_lsvm_error.h"
 #define LATENT_SVM_OK 0
@@ -117,8 +112,6 @@ typedef struct{
 #define FFT_ERROR -10
 #define LSVM_PARSER_FILE_NOT_FOUND -11
 
-
-
 /*
 // Getting feature map for the selected subimage  
 //
@@ -132,8 +125,7 @@ typedef struct{
 // RESULT
 // Error status
 */
-int getFeatureMaps(const IplImage * image, const int k, CvLSVMFeatureMapCaskade **map);
-
+int getFeatureMaps(const IplImage *image, const int k, CvLSVMFeatureMapCaskade **map);
 
 /*
 // Feature map Normalization and Truncation 
@@ -166,13 +158,11 @@ int normalizeAndTruncate(CvLSVMFeatureMapCaskade *map, const float alfa);
 */
 int PCAFeatureMaps(CvLSVMFeatureMapCaskade *map);
 
-
 //modified from "lsvmc_routine.h"
 
 int allocFeatureMapObject(CvLSVMFeatureMapCaskade **obj, const int sizeX, const int sizeY,
                           const int p);
 
-int freeFeatureMapObject (CvLSVMFeatureMapCaskade **obj);
-
+int freeFeatureMapObject(CvLSVMFeatureMapCaskade **obj);
 
 #endif
