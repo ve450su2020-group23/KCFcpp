@@ -1,3 +1,6 @@
+# C++ KCF Tracker: Update
+**This version of KCF-cpp has been converted to OpenCV 4.3.0.** Tested on a Ubuntu 20.04 machine with OpenCV 4.3.0 and it compiled successfully.
+
 # C++ KCF Tracker
 This package includes a C++ class with several tracking methods based on the Kernelized Correlation Filter (KCF) [1, 2].   
 It also includes an executable to interface with the VOT benchmark.
