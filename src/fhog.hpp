@@ -54,7 +54,7 @@
 //#include "_lsvmc_routine.h"
 
 //#include "opencv2/imgproc.hpp"
-#include "opencv2/imgproc/imgproc_c.h"
+#include "opencv4/opencv2/imgproc/imgproc_c.h"
 
 //modified from "_lsvmc_types.h"
 
